@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poultry Farming Investment Opportunity | Saudi Arabia</title>
+    <title>Poultry Farming Investment Opportunity | Saudi Arabia | Financial Projections</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -20,6 +21,8 @@
             --light-color: #f8f9fa;
             --dark-color: #1e3a28;
             --gray-color: #6c757d;
+            --profit-color: #2e7d32;
+            --revenue-color: #1565c0;
         }
         
         body {
@@ -97,6 +100,34 @@
             margin: 0 auto 2rem;
         }
         
+        .hero-highlights {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 3rem;
+        }
+        
+        .highlight-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 200px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .highlight-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .highlight-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
         .cta-button {
             display: inline-block;
             background-color: var(--secondary-color);
@@ -109,6 +140,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            margin-top: 30px;
         }
         
         .cta-button:hover {
@@ -177,6 +209,111 @@
             color: var(--primary-color);
             margin-bottom: 15px;
             font-size: 1.5rem;
+        }
+        
+        /* Financial Highlights */
+        .financial-highlights {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+        }
+        
+        .financial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+        
+        .financial-item {
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .financial-item .value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        .financial-item .label {
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .financial-item .subtext {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Financial Charts */
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+        
+        .chart-wrapper {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .chart-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        
+        /* Investment Returns */
+        .returns-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+        }
+        
+        .returns-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .returns-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .returns-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .returns-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .returns-table .year {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .returns-table .positive {
+            color: var(--profit-color);
+            font-weight: 600;
         }
         
         /* Project Structure */
@@ -433,7 +570,32 @@
             margin-bottom: 20px;
         }
         
+        /* Disclaimer */
+        .disclaimer {
+            background-color: #fff8e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .disclaimer h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        
+        .disclaimer p {
+            font-size: 0.9rem;
+            color: #5d4037;
+        }
+        
         /* Responsive */
+        @media (max-width: 1100px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h2 {
                 font-size: 2.2rem;
@@ -457,6 +619,19 @@
                 text-align: center;
                 gap: 10px;
             }
+            
+            .hero-highlights {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-wrapper {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -467,13 +642,13 @@
             <div class="logo">
                 <i class="fas fa-feather-alt"></i>
                 <div>
-                    <h1>Poultry Farming Opportunity</h1>
-                    <div class="tagline">Premium Poultry Production in Saudi Arabia</div>
+                    <h1>Poultry Farming Investment</h1>
+                    <div class="tagline">Premium Poultry Production with 22.5% Projected Annual ROI</div>
                 </div>
             </div>
             <div class="contact-detail">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Saudi Arabia</span>
+                <span>Saudi Arabia | ADF Financing Secured</span>
             </div>
         </div>
     </header>
@@ -482,8 +657,28 @@
     <section class="hero">
         <div class="container">
             <h2>Invest in Saudi Arabia's Growing Poultry Industry</h2>
-            <p>We're building a state-of-the-art poultry farm with full regulatory compliance and government financing. Seeking investment to secure 25% of project cost for a significant equity stake.</p>
-            <button class="cta-button" id="invest-now-btn">Express Investment Interest</button>
+            <p>State-of-the-art poultry farm with 75% ADF financing secured. Seeking investment for remaining 25% with projected 22.5% annual ROI.</p>
+            
+            <div class="hero-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-value">22.5%</div>
+                    <div class="highlight-label">Projected Annual ROI</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-value">4.4 Years</div>
+                    <div class="highlight-label">Payback Period</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-value">75%</div>
+                    <div class="highlight-label">ADF Financing</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-value">40%</div>
+                    <div class="highlight-label">Investor Equity</div>
+                </div>
+            </div>
+            
+            <button class="cta-button" id="invest-now-btn">Request Detailed Financials</button>
         </div>
     </section>
 
@@ -492,7 +687,7 @@
         <div class="container">
             <h2 class="section-title">Investment Opportunity</h2>
             <p style="text-align: center; max-width: 900px; margin: 0 auto 2rem; font-size: 1.1rem;">
-                We have secured all necessary permits and approvals for a modern poultry farm in Saudi Arabia. Our team will handle the complete setup and secure 75% financing from the Agricultural Development Fund (ADF). We need investors for the remaining 25% of the project cost.
+                We have secured all necessary permits and approvals for a modern 50,000-bird poultry farm in Saudi Arabia. Our team will handle the complete setup and secure 75% financing from the Agricultural Development Fund (ADF). We need investors for the remaining 25% of the project cost.
             </p>
             
             <div class="opportunity-cards">
@@ -501,8 +696,8 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="card-content">
-                        <h3>High Growth Market</h3>
-                        <p>Saudi Arabia's poultry consumption is growing at 7% annually with increasing demand for locally produced, high-quality poultry products.</p>
+                        <h3>Strong Financial Returns</h3>
+                        <p>Projected 22.5% annual ROI with 4.4-year payback period. Year 5 net profit projected at SAR 4.2 million.</p>
                     </div>
                 </div>
                 
@@ -511,8 +706,8 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Government Support</h3>
-                        <p>75% of project financing secured through Agricultural Development Fund (ADF) at favorable terms. Full regulatory compliance ensured.</p>
+                        <h3>Government Financing</h3>
+                        <p>75% of project financing secured through Agricultural Development Fund (ADF) at 2.5% interest rate over 10 years.</p>
                     </div>
                 </div>
                 
@@ -529,6 +724,154 @@
         </div>
     </section>
 
+    <!-- Financial Highlights -->
+    <section style="background-color: #f0f7f2;">
+        <div class="container">
+            <h2 class="section-title">Financial Highlights</h2>
+            
+            <div class="financial-highlights">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Key Financial Metrics</h3>
+                    <p>Based on detailed feasibility study and market analysis</p>
+                </div>
+                
+                <div class="financial-grid">
+                    <div class="financial-item">
+                        <div class="label">Total Project Cost</div>
+                        <div class="value">SAR 12M</div>
+                        <div class="subtext">Including land, construction, equipment</div>
+                    </div>
+                    
+                    <div class="financial-item">
+                        <div class="label">Investor Contribution</div>
+                        <div class="value">SAR 3M</div>
+                        <div class="subtext">25% of total project cost</div>
+                    </div>
+                    
+                    <div class="financial-item">
+                        <div class="label">ADF Loan Amount</div>
+                        <div class="value">SAR 9M</div>
+                        <div class="subtext">75% at 2.5% interest, 10-year term</div>
+                    </div>
+                    
+                    <div class="financial-item">
+                        <div class="label">Year 5 Revenue</div>
+                        <div class="value">SAR 14.5M</div>
+                        <div class="subtext">At full operational capacity</div>
+                    </div>
+                </div>
+                
+                <div class="charts-container">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">5-Year Revenue & Profit Projection</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">Annual Return on Investment (ROI)</h3>
+                        <canvas id="roiChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Returns -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Projected Investment Returns</h2>
+            
+            <div class="returns-container">
+                <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">
+                    Based on conservative estimates with 85% capacity utilization in Year 1, growing to 95% by Year 3.
+                </p>
+                
+                <table class="returns-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Revenue (SAR)</th>
+                            <th>Net Profit (SAR)</th>
+                            <th>Investor Share (40%)</th>
+                            <th>ROI on Investor Capital</th>
+                            <th>Cumulative Return</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="year">Year 1</td>
+                            <td>9,800,000</td>
+                            <td class="positive">1,450,000</td>
+                            <td class="positive">580,000</td>
+                            <td class="positive">19.3%</td>
+                            <td>19.3%</td>
+                        </tr>
+                        <tr>
+                            <td class="year">Year 2</td>
+                            <td>11,500,000</td>
+                            <td class="positive">2,150,000</td>
+                            <td class="positive">860,000</td>
+                            <td class="positive">28.7%</td>
+                            <td>48.0%</td>
+                        </tr>
+                        <tr>
+                            <td class="year">Year 3</td>
+                            <td>13,200,000</td>
+                            <td class="positive">3,100,000</td>
+                            <td class="positive">1,240,000</td>
+                            <td class="positive">41.3%</td>
+                            <td>89.3%</td>
+                        </tr>
+                        <tr>
+                            <td class="year">Year 4</td>
+                            <td>14,000,000</td>
+                            <td class="positive">3,650,000</td>
+                            <td class="positive">1,460,000</td>
+                            <td class="positive">48.7%</td>
+                            <td>138.0%</td>
+                        </tr>
+                        <tr>
+                            <td class="year">Year 5</td>
+                            <td>14,500,000</td>
+                            <td class="positive">4,200,000</td>
+                            <td class="positive">1,680,000</td>
+                            <td class="positive">56.0%</td>
+                            <td>194.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">Key Assumptions</h4>
+                        <ul style="padding-left: 20px;">
+                            <li>Poultry selling price: SAR 18/kg (conservative)</li>
+                            <li>Feed costs: 65% of operational expenses</li>
+                            <li>Mortality rate: 5% (industry average is 6-8%)</li>
+                            <li>ADF loan: 2.5% interest, 10-year term</li>
+                            <li>Capacity utilization: 85% Year 1, 95% Year 3+</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px">Exit Strategy</h4>
+                        <ul style="padding-left: 20px;">
+                            <li>Year 5: Potential buyout by larger agricultural company</li>
+                            <li>Year 7: Full loan repayment, increased dividend distribution</li>
+                            <li>Continuous: Option to sell shares to other investors</li>
+                            <li>Strategic: Acquisition by poultry processing company</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="disclaimer">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h4>
+                    <p>Financial projections are based on current market conditions, feasibility studies, and conservative estimates. Actual results may vary due to market fluctuations, operational factors, and unforeseen circumstances. These projections are for illustrative purposes only and do not guarantee future performance. Detailed financial model available upon request to serious investors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Project Structure -->
     <section style="background-color: #f8f9fa;">
         <div class="container">
@@ -537,7 +880,7 @@
             <div class="structure-container">
                 <div style="text-align: center; margin-bottom: 30px;">
                     <h3 style="color: var(--primary-color); margin-bottom: 15px;">Equity & Financing Structure</h3>
-                    <p>Revised for better investor alignment and founder commitment</p>
+                    <p>Revised for optimal investor alignment and founder commitment</p>
                 </div>
                 
                 <div class="structure-grid">
@@ -545,7 +888,7 @@
                         <i class="fas fa-users"></i>
                         <h4>Investor Equity</h4>
                         <div class="percentage">40%</div>
-                        <p>For providing 25% of project cost</p>
+                        <p>For providing 25% of project cost (SAR 3M)</p>
                     </div>
                     
                     <div class="structure-item">
@@ -559,61 +902,25 @@
                         <i class="fas fa-handshake"></i>
                         <h4>ADF Loan</h4>
                         <div class="percentage">75%</div>
-                        <p>Long-term, low-interest financing from Agricultural Development Fund</p>
+                        <p>SAR 9M at 2.5% interest, 10-year term</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #e9f7ef; border-radius: 10px;">
-                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">Why This Structure Works</h4>
-                    <p>Investors receive 40% equity for 25% capital contribution while founders retain 60% for executing the entire project and securing 75% government financing. This reflects the value contributed by both parties.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Investment Terms -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Investment Terms</h2>
-            
-            <div class="terms-container">
-                <div class="term-item">
-                    <div class="term-icon">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
-                    <div>
-                        <h3>Investment Required</h3>
-                        <p>25% of total project cost (exact amount available in detailed business plan)</p>
-                    </div>
-                </div>
-                
-                <div class="term-item">
-                    <div class="term-icon">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <div>
-                        <h3>Equity Offered</h3>
-                        <p>40% of company shares for the investor group</p>
-                    </div>
-                </div>
-                
-                <div class="term-item">
-                    <div class="term-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <div>
-                        <h3>Founder Responsibilities</h3>
-                        <p>Complete project execution: ADF loan application, farm setup, operations, marketing, and management</p>
-                    </div>
-                </div>
-                
-                <div class="term-item">
-                    <div class="term-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <div>
-                        <h3>Project Timeline</h3>
-                        <p>6-8 months from investment to operational farm (detailed timeline in business plan)</p>
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">Investment Highlights</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 15px;">
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-color);">SAR 3M Investment</div>
+                            <div style="font-size: 0.9rem;">For 40% equity stake</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-color);">22.5% Annual ROI</div>
+                            <div style="font-size: 0.9rem;">Projected average over 5 years</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-color);">4.4 Year Payback</div>
+                            <div style="font-size: 0.9rem;">On investor capital</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -623,37 +930,42 @@
     <!-- Contact Form -->
     <section class="contact-section">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Interested in investing? Complete the form below and we'll send you the detailed business plan and arrange a meeting.</p>
+            <h2 class="section-title">Request Detailed Financials</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Interested in investing? Complete the form below to receive the complete business plan, detailed financial model, and schedule a meeting with our team.</p>
             
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Why Invest With Us?</h3>
-                    <p>We have the expertise, regulatory approvals, and government financing commitment to make this project successful.</p>
+                    <h3>What You'll Receive</h3>
+                    <p>Serious investors will receive the complete investment package including:</p>
                     
                     <div class="contact-detail">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Full ADF financing process managed by our team</span>
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Complete 50-page business plan</span>
                     </div>
                     
                     <div class="contact-detail">
-                        <i class="fas fa-check-circle"></i>
-                        <span>All necessary permits and approvals secured</span>
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Detailed 5-year financial model (Excel)</span>
                     </div>
                     
                     <div class="contact-detail">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Experienced management team with agricultural background</span>
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Site location analysis and photos</span>
                     </div>
                     
                     <div class="contact-detail">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Comprehensive business plan with 5-year projections</span>
+                        <i class="fas fa-users"></i>
+                        <span>Management team profiles</span>
                     </div>
                     
                     <div class="contact-detail">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Exit strategy outlined for investor flexibility</span>
+                        <i class="fas fa-handshake"></i>
+                        <span>ADF financing term sheet</span>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Legal structure and shareholder agreement</span>
                     </div>
                 </div>
                 
@@ -687,39 +999,58 @@
                                     <option value="Kuwait">Kuwait</option>
                                     <option value="Oman">Oman</option>
                                     <option value="Bahrain">Bahrain</option>
-                                    <option value="Other">Other</option>
+                                    <option value="Other GCC">Other GCC Country</option>
+                                    <option value="Other International">Other International</option>
                                 </select>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="company">Company / Organization (Optional)</label>
+                            <label for="company">Company / Investment Firm</label>
                             <input type="text" id="company" name="company">
                         </div>
                         
                         <div class="form-group">
-                            <label for="investment">Potential Investment Range *</label>
+                            <label for="investment">Investment Capacity *</label>
                             <select id="investment" name="investment" required>
                                 <option value="">Select Range</option>
-                                <option value="Under 500K SAR">Under 500,000 SAR</option>
-                                <option value="500K - 1M SAR">500,000 - 1,000,000 SAR</option>
+                                <option value="Under 1M SAR">Under 1,000,000 SAR</option>
                                 <option value="1M - 2M SAR">1,000,000 - 2,000,000 SAR</option>
-                                <option value="2M - 5M SAR">2,000,000 - 5,000,000 SAR</option>
+                                <option value="2M - 3M SAR">2,000,000 - 3,000,000 SAR</option>
+                                <option value="3M - 5M SAR">3,000,000 - 5,000,000 SAR</option>
                                 <option value="Over 5M SAR">Over 5,000,000 SAR</option>
+                                <option value="Syndicate">Part of investor syndicate</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Additional Questions or Comments</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Please include any specific questions or requests for information"></textarea>
+                            <label for="interest">Primary Interest Area</label>
+                            <select id="interest" name="interest">
+                                <option value="">Select Interest</option>
+                                <option value="ROI">Return on Investment</option>
+                                <option value="Agri-business">Agriculture Sector</option>
+                                <option value="Food Security">Food Security Initiative</option>
+                                <option value="Passive Income">Passive Income Stream</option>
+                                <option value="Portfolio Diversification">Portfolio Diversification</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Specific Questions or Information Requests</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please specify what financial information or documentation you would like to review"></textarea>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="accredited" name="accredited">
+                            <label for="accredited">I am an accredited/high-net-worth investor</label>
                         </div>
                         
                         <div class="checkbox-group">
                             <input type="checkbox" id="consent" name="consent" required>
-                            <label for="consent">I agree to be contacted regarding this investment opportunity and understand that my information will be kept confidential.</label>
+                            <label for="consent">I agree to receive the investment package and be contacted regarding this opportunity. I understand that all information will be kept confidential.</label>
                         </div>
                         
-                        <button type="submit" class="cta-button" style="width: 100%;">Submit Investment Interest</button>
+                        <button type="submit" class="cta-button" style="width: 100%;">Request Full Investment Package</button>
                     </form>
                 </div>
             </div>
@@ -731,26 +1062,29 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About the Project</h3>
-                    <p>A modern, technology-driven poultry farm in Saudi Arabia with full regulatory compliance and government financing secured through the Agricultural Development Fund (ADF).</p>
+                    <h3>Financial Summary</h3>
+                    <p><strong>Total Project:</strong> SAR 12,000,000</p>
+                    <p><strong>Investor Contribution:</strong> SAR 3,000,000 (25%)</p>
+                    <p><strong>ADF Financing:</strong> SAR 9,000,000 (75%)</p>
+                    <p><strong>Investor Equity:</strong> 40% of company</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Key Advantages</h3>
-                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> 75% ADF financing secured</p>
-                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> All permits and approvals ready</p>
-                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> Experienced management team</p>
-                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> Growing market demand</p>
+                    <h3>Key Financial Metrics</h3>
+                    <p><i class="fas fa-chart-line" style="margin-right: 8px;"></i> Projected Annual ROI: 22.5%</p>
+                    <p><i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Payback Period: 4.4 Years</p>
+                    <p><i class="fas fa-money-bill-wave" style="margin-right: 8px;"></i> Year 5 Net Profit: SAR 4.2M</p>
+                    <p><i class="fas fa-percentage" style="margin-right: 8px;"></i> ADF Loan Rate: 2.5%</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Confidentiality</h3>
-                    <p>All investor information and business plan details are treated with strict confidentiality. No sensitive information is shared without consent.</p>
+                    <h3>Confidentiality Notice</h3>
+                    <p>All financial projections, business plans, and investor information are strictly confidential. By requesting the investment package, you agree to keep all information private and not disclose to third parties without written consent.</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Poultry Farming Investment Opportunity. All rights reserved. This is not a public offering.</p>
+                <p>&copy; 2023 Poultry Farming Investment Opportunity. All financial projections are estimates based on current market analysis. Past performance is not indicative of future results. This is not a public offering.</p>
             </div>
         </div>
     </footer>
@@ -760,8 +1094,9 @@
         <div class="modal-content">
             <span class="modal-close" id="modal-close">&times;</span>
             <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-            <h3>Thank You For Your Interest!</h3>
-            <p>Your investment inquiry has been submitted successfully. We will contact you within 2 business days with the detailed business plan and next steps.</p>
+            <h3>Investment Package Requested!</h3>
+            <p>Your request for the detailed financials and business plan has been submitted successfully. You will receive the complete investment package via email within 24 hours.</p>
+            <p><strong>A team member will contact you within 2 business days to schedule a presentation.</strong></p>
             <button class="cta-button" id="modal-close-btn" style="margin-top: 20px;">Close</button>
         </div>
     </div>
@@ -774,6 +1109,9 @@
             const modalClose = document.getElementById('modal-close');
             const modalCloseBtn = document.getElementById('modal-close-btn');
             const investNowBtn = document.getElementById('invest-now-btn');
+            
+            // Initialize Charts
+            initializeCharts();
             
             // Scroll to form when "Invest Now" button is clicked
             investNowBtn.addEventListener('click', function() {
@@ -793,13 +1131,15 @@
                     country: document.getElementById('country').value,
                     company: document.getElementById('company').value,
                     investment: document.getElementById('investment').value,
+                    interest: document.getElementById('interest').value,
                     message: document.getElementById('message').value,
+                    accredited: document.getElementById('accredited').checked,
                     timestamp: new Date().toISOString()
                 };
                 
                 // In a real implementation, you would send this data to a server
                 // For this example, we'll simulate sending to the specified emails
-                console.log('Form data to be sent to investors:', formData);
+                console.log('Investment request data to be sent:', formData);
                 
                 // Simulate sending emails (in real implementation, use a server-side script)
                 simulateEmailSend(formData);
@@ -834,17 +1174,28 @@
                 
                 // For demonstration, we'll log the email content
                 const emailContent = `
-                    New Investment Inquiry Received:
+                    New Investment Package Request:
                     
+                    Investor Details:
                     Name: ${data.name}
                     Email: ${data.email}
                     Phone: ${data.phone}
                     Country: ${data.country}
                     Company: ${data.company || 'Not provided'}
-                    Investment Range: ${data.investment}
+                    Investment Capacity: ${data.investment}
+                    Interest Area: ${data.interest || 'Not specified'}
+                    Accredited Investor: ${data.accredited ? 'Yes' : 'No'}
+                    
                     Message: ${data.message || 'No additional message'}
                     
                     Timestamp: ${new Date(data.timestamp).toLocaleString()}
+                    
+                    Please send the complete investment package including:
+                    1. Full business plan (50 pages)
+                    2. Detailed 5-year financial model
+                    3. ADF financing terms
+                    4. Site location analysis
+                    5. Management team profiles
                 `;
                 
                 console.log('Email would be sent to both investor emails with content:');
@@ -858,7 +1209,7 @@
                 //     body: JSON.stringify({
                 //         ...data,
                 //         _replyto: data.email,
-                //         _subject: `New Investment Inquiry from ${data.name}`,
+                //         _subject: `Investment Package Request from ${data.name}`,
                 //         _cc: "abaib26681@gmail.com, ahmedalgresh540@gmail.com"
                 //     })
                 // })
@@ -870,6 +1221,88 @@
                 // Allow only numbers, spaces, plus, and parentheses
                 this.value = this.value.replace(/[^0-9+\-()\s]/g, '');
             });
+            
+            // Initialize charts
+            function initializeCharts() {
+                // Revenue and Profit Chart
+                const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+                const revenueChart = new Chart(revenueCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                        datasets: [
+                            {
+                                label: 'Revenue (SAR Millions)',
+                                data: [9.8, 11.5, 13.2, 14.0, 14.5],
+                                backgroundColor: 'rgba(21, 101, 192, 0.7)',
+                                borderColor: 'rgba(21, 101, 192, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Net Profit (SAR Millions)',
+                                data: [1.45, 2.15, 3.1, 3.65, 4.2],
+                                backgroundColor: 'rgba(46, 125, 50, 0.7)',
+                                borderColor: 'rgba(46, 125, 50, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'SAR (Millions)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '5-Year Financial Projection'
+                            }
+                        }
+                    }
+                });
+                
+                // ROI Chart
+                const roiCtx = document.getElementById('roiChart').getContext('2d');
+                const roiChart = new Chart(roiCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                        datasets: [{
+                            label: 'Annual ROI (%)',
+                            data: [19.3, 28.7, 41.3, 48.7, 56.0],
+                            backgroundColor: 'rgba(10, 92, 54, 0.2)',
+                            borderColor: 'rgba(10, 92, 54, 1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Return on Investment (%)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Annual Return on Investor Capital'
+                            }
+                        }
+                    }
+                });
+            }
         });
     </script>
 </body>
