@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farming Investment Opportunity | Saudi Arabia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #0a5c36;
+            --secondary-color: #d4a017;
+            --accent-color: #2e8540;
+            --light-color: #f8f9fa;
+            --dark-color: #1e3a28;
+            --gray-color: #6c757d;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 92, 54, 0.85), rgba(10, 92, 54, 0.9)), url('https://images.unsplash.com/photo-1624726175512-19b9baf9fbd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #e6b810;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Opportunity Section */
+        .opportunity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-icon {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Project Structure */
+        .structure-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+        }
+        
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+        
+        .structure-item {
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+        }
+        
+        .structure-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .structure-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .structure-item .percentage {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        /* Investment Terms */
+        .terms-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+        }
+        
+        .term-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .term-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .term-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Contact Form */
+        .contact-section {
+            background-color: #f8f9fa;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-detail i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            width: 25px;
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        
+        .checkbox-group input {
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+        
+        .checkbox-group label {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-color);
+        }
+        
+        .modal h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .modal p {
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-feather-alt"></i>
+                <div>
+                    <h1>Poultry Farming Opportunity</h1>
+                    <div class="tagline">Premium Poultry Production in Saudi Arabia</div>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Saudi Arabia</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Invest in Saudi Arabia's Growing Poultry Industry</h2>
+            <p>We're building a state-of-the-art poultry farm with full regulatory compliance and government financing. Seeking investment to secure 25% of project cost for a significant equity stake.</p>
+            <button class="cta-button" id="invest-now-btn">Express Investment Interest</button>
+        </div>
+    </section>
+
+    <!-- Investment Opportunity -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Investment Opportunity</h2>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                We have secured all necessary permits and approvals for a modern poultry farm in Saudi Arabia. Our team will handle the complete setup and secure 75% financing from the Agricultural Development Fund (ADF). We need investors for the remaining 25% of the project cost.
+            </p>
+            
+            <div class="opportunity-cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>High Growth Market</h3>
+                        <p>Saudi Arabia's poultry consumption is growing at 7% annually with increasing demand for locally produced, high-quality poultry products.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Government Support</h3>
+                        <p>75% of project financing secured through Agricultural Development Fund (ADF) at favorable terms. Full regulatory compliance ensured.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Turnkey Solution</h3>
+                        <p>Our experienced team manages everything from farm setup to operations and marketing. Investors benefit from passive ownership.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Structure -->
+    <section style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Project Structure</h2>
+            
+            <div class="structure-container">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Equity & Financing Structure</h3>
+                    <p>Revised for better investor alignment and founder commitment</p>
+                </div>
+                
+                <div class="structure-grid">
+                    <div class="structure-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Investor Equity</h4>
+                        <div class="percentage">40%</div>
+                        <p>For providing 25% of project cost</p>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Founder Equity</h4>
+                        <div class="percentage">60%</div>
+                        <p>For project execution, management & securing ADF loan</p>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>ADF Loan</h4>
+                        <div class="percentage">75%</div>
+                        <p>Long-term, low-interest financing from Agricultural Development Fund</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #e9f7ef; border-radius: 10px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">Why This Structure Works</h4>
+                    <p>Investors receive 40% equity for 25% capital contribution while founders retain 60% for executing the entire project and securing 75% government financing. This reflects the value contributed by both parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Terms -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Investment Terms</h2>
+            
+            <div class="terms-container">
+                <div class="term-item">
+                    <div class="term-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Investment Required</h3>
+                        <p>25% of total project cost (exact amount available in detailed business plan)</p>
+                    </div>
+                </div>
+                
+                <div class="term-item">
+                    <div class="term-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div>
+                        <h3>Equity Offered</h3>
+                        <p>40% of company shares for the investor group</p>
+                    </div>
+                </div>
+                
+                <div class="term-item">
+                    <div class="term-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div>
+                        <h3>Founder Responsibilities</h3>
+                        <p>Complete project execution: ADF loan application, farm setup, operations, marketing, and management</p>
+                    </div>
+                </div>
+                
+                <div class="term-item">
+                    <div class="term-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Project Timeline</h3>
+                        <p>6-8 months from investment to operational farm (detailed timeline in business plan)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Interested in investing? Complete the form below and we'll send you the detailed business plan and arrange a meeting.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Why Invest With Us?</h3>
+                    <p>We have the expertise, regulatory approvals, and government financing commitment to make this project successful.</p>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Full ADF financing process managed by our team</span>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>All necessary permits and approvals secured</span>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Experienced management team with agricultural background</span>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Comprehensive business plan with 5-year projections</span>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Exit strategy outlined for investor flexibility</span>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <form id="investment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Country of Residence *</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                    <option value="UAE">United Arab Emirates</option>
+                                    <option value="Qatar">Qatar</option>
+                                    <option value="Kuwait">Kuwait</option>
+                                    <option value="Oman">Oman</option>
+                                    <option value="Bahrain">Bahrain</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company / Organization (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="investment">Potential Investment Range *</label>
+                            <select id="investment" name="investment" required>
+                                <option value="">Select Range</option>
+                                <option value="Under 500K SAR">Under 500,000 SAR</option>
+                                <option value="500K - 1M SAR">500,000 - 1,000,000 SAR</option>
+                                <option value="1M - 2M SAR">1,000,000 - 2,000,000 SAR</option>
+                                <option value="2M - 5M SAR">2,000,000 - 5,000,000 SAR</option>
+                                <option value="Over 5M SAR">Over 5,000,000 SAR</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Questions or Comments</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please include any specific questions or requests for information"></textarea>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I agree to be contacted regarding this investment opportunity and understand that my information will be kept confidential.</label>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" style="width: 100%;">Submit Investment Interest</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About the Project</h3>
+                    <p>A modern, technology-driven poultry farm in Saudi Arabia with full regulatory compliance and government financing secured through the Agricultural Development Fund (ADF).</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Key Advantages</h3>
+                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> 75% ADF financing secured</p>
+                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> All permits and approvals ready</p>
+                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> Experienced management team</p>
+                    <p><i class="fas fa-check" style="margin-right: 8px;"></i> Growing market demand</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Confidentiality</h3>
+                    <p>All investor information and business plan details are treated with strict confidentiality. No sensitive information is shared without consent.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Poultry Farming Investment Opportunity. All rights reserved. This is not a public offering.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+            <h3>Thank You For Your Interest!</h3>
+            <p>Your investment inquiry has been submitted successfully. We will contact you within 2 business days with the detailed business plan and next steps.</p>
+            <button class="cta-button" id="modal-close-btn" style="margin-top: 20px;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form submission handling
+            const form = document.getElementById('investment-form');
+            const successModal = document.getElementById('success-modal');
+            const modalClose = document.getElementById('modal-close');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const investNowBtn = document.getElementById('invest-now-btn');
+            
+            // Scroll to form when "Invest Now" button is clicked
+            investNowBtn.addEventListener('click', function() {
+                document.querySelector('.contact-section').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('name').focus();
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Collect form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    country: document.getElementById('country').value,
+                    company: document.getElementById('company').value,
+                    investment: document.getElementById('investment').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // In a real implementation, you would send this data to a server
+                // For this example, we'll simulate sending to the specified emails
+                console.log('Form data to be sent to investors:', formData);
+                
+                // Simulate sending emails (in real implementation, use a server-side script)
+                simulateEmailSend(formData);
+                
+                // Show success modal
+                successModal.style.display = 'flex';
+                
+                // Reset form
+                form.reset();
+            });
+            
+            // Close modal functionality
+            modalClose.addEventListener('click', function() {
+                successModal.style.display = 'none';
+            });
+            
+            modalCloseBtn.addEventListener('click', function() {
+                successModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === successModal) {
+                    successModal.style.display = 'none';
+                }
+            });
+            
+            // Function to simulate email sending
+            function simulateEmailSend(data) {
+                // In a real implementation, this would be a fetch/AJAX call to a server
+                // that sends emails to abaib26681@gmail.com and ahmedalgresh540@gmail.com
+                
+                // For demonstration, we'll log the email content
+                const emailContent = `
+                    New Investment Inquiry Received:
+                    
+                    Name: ${data.name}
+                    Email: ${data.email}
+                    Phone: ${data.phone}
+                    Country: ${data.country}
+                    Company: ${data.company || 'Not provided'}
+                    Investment Range: ${data.investment}
+                    Message: ${data.message || 'No additional message'}
+                    
+                    Timestamp: ${new Date(data.timestamp).toLocaleString()}
+                `;
+                
+                console.log('Email would be sent to both investor emails with content:');
+                console.log(emailContent);
+                
+                // For actual implementation, you would need a backend service
+                // Example using Formspree or similar service:
+                // fetch('https://formspree.io/f/your-form-id', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({
+                //         ...data,
+                //         _replyto: data.email,
+                //         _subject: `New Investment Inquiry from ${data.name}`,
+                //         _cc: "abaib26681@gmail.com, ahmedalgresh540@gmail.com"
+                //     })
+                // })
+            }
+            
+            // Form validation enhancements
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', function(e) {
+                // Allow only numbers, spaces, plus, and parentheses
+                this.value = this.value.replace(/[^0-9+\-()\s]/g, '');
+            });
+        });
+    </script>
+</body>
+</html>
